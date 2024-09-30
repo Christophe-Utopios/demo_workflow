@@ -17,3 +17,9 @@ jobs:
       
       - name: dit bye 
         run: echo "Goodbye !"
+  
+  second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: étape
+        run: echo "Je suis un second job"
