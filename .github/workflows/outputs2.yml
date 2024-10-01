@@ -12,4 +12,4 @@ jobs:
     needs: premier-job
     steps:
       - name: retourne variable1 variable2
-        run: echo "${needs.premier-job.outputs.variable1} ${needs.premier-job.outputs.variable2}"
+        run: echo "${{needs.premier-job.outputs.variable1}} ${{needs.premier-job.outputs.variable2}}"
