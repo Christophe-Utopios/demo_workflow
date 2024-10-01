@@ -15,18 +15,18 @@ jobs:
           key: ${{ runner.os }}-node-package-${{ hashFiles('**/package-lock.json') }}
 
       - name: Installation des dépendances
-        if: ${{ steps.cache.outputs.cache-hit != 'true' }}
+        # if: ${{ steps.cache.outputs.cache-hit != 'true' }}
         run: npm install
 
       - name: build de l'application
-        if: ${{ steps.cache.outputs.cache-hit != 'true' }}
+        # if: ${{ steps.cache.outputs.cache-hit != 'true' }}
         run: npm run build
 
-      - name: Récupération de l'artéfact
-        if: ${{ steps.cache.outputs.cache-hit == 'true' }}
-        uses: actions/download-artifact@v4
-        with:
-          name: mon_app
+      # - name: Récupération de l'artéfact
+      #   if: ${{ steps.cache.outputs.cache-hit == 'true' }}
+      #   uses: actions/download-artifact@v4
+      #   with:
+      #     name: mon_app
       
       - name: test
         run: npm run test
