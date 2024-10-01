@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     needs: premier-job
     steps:
-      - name: retourne variable1 et variable2
-        run: echo "${needs.permier-job.outputs.variable1} ${needs.permier-job.outputs.variable2}"
+      - name: retourne variable1 variable2
+        run: echo "${needs.premier-job.outputs.variable1} ${needs.premier-job.outputs.variable2}"
