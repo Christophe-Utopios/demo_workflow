@@ -7,6 +7,12 @@ jobs:
       - name: Récupération de notre application
         uses: actions/checkout@v4
 
+      - name: Mise en cache des dépendances
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-package-${{ hashFiles('**/package-lock.json') }}
+
       - name: Installation des dépendances
         run: npm install
 
