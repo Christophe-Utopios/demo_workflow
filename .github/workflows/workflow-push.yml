@@ -18,6 +18,12 @@ jobs:
 
       - name: build de l'application
         run: npm run build
+
+      - name: Upload du build de notre application
+        uses: actions/upload-artifact@v4
+        with:
+          name: mon_app
+          path: build
       
       - name: test
         run: npm run test
