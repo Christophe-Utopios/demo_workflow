@@ -3,7 +3,6 @@ on: push
 jobs:
   docker:
     runs-on: ubuntu-latest
-    needs: download
     env:
       USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
       PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
